@@ -95,7 +95,23 @@
       let firstNum = document.querySelector('#first-num').value;
       let secondNum = document.querySelector('#second-num').value;
       let operator = document.querySelector('#operator').value;
-      output.innerHTML = eval(`${firstNum} ${operator} ${secondNum}`);
+      // output.innerHTML = eval(`${firstNum} ${operator} ${secondNum}`);
+      try {
+        if (operator === '/' && secondNum === '0') {
+         
+          throw new Error('Division by zero is not allowed.');   //Step 3
+        }
+        else {
+          output.innerHTML = eval(`${firstNum} ${operator} ${secondNum}`);
+        }
+
+      } catch (error) {
+        console.error('Error!');
+        
+      } finally {
+        console.log('Attempted to calculate!!!');
+      }
+
     });
 
     let errorBtns = Array.from(document.querySelectorAll('#error-btns > button'));
