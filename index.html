@@ -102,6 +102,109 @@
 
     // Start your code here
     // You may move this JS to another file if you wish
+
+    // Console Log
+    errorBtns[0].addEventListener('click', () => {
+      console.log('Console Log Demo');
+    });
+
+    // Console Error
+    errorBtns[1].addEventListener('click', () => {
+      console.error('Console Error Demo');
+    });
+
+    // Console Count
+    errorBtns[2].addEventListener('click', () => {
+      console.count();
+    });
+
+    // Console Warn
+    errorBtns[3].addEventListener('click', () => {
+      console.warn('Console Warn Button');
+    });
+
+    // Console Assert
+    errorBtns[4].addEventListener('click', () => {
+      const num1 = 2;
+      const num2 = 3;
+      console.assert(2 == 3, '2 is not 3');
+    });
+
+
+    // Console Clear
+    errorBtns[5].addEventListener('click', () => {
+      console.clear();
+    });
+
+    // Console Dir
+    errorBtns[6].addEventListener('click', () => {
+      const button = document.querySelector('#error-btns > button');
+      console.dir(button);
+    });
+
+
+    // Console Dirxml
+    errorBtns[7].addEventListener('click', () => {
+      const xmlString = '<button> Console dirxml </button>';
+      console.dirxml(xmlString);
+    });
+
+    // Console Group Start
+    errorBtns[8].addEventListener('click', () => {
+      console.group('group demo');
+    });
+
+
+    // Console Group End
+    errorBtns[9].addEventListener('click', () => {
+      console.groupEnd('group demo');
+    });
+
+    // Console Table
+    errorBtns[10].addEventListener('click', () => {
+      const classes = [
+        { name: 'Software Engineering', num: 110 },
+        { name: 'Programming Languages', num: 130 },
+        { name: 'Advanced Software Engineering', num: 112 }
+      ];
+      console.table(classes);
+    });
+
+    //Start Timer
+    errorBtns[11].addEventListener('click', () => {
+      console.time('Timer Button');
+    });
+
+    // End timer
+    errorBtns[12].addEventListener('click', () => {
+      console.timeEnd('Timer Button');
+    });
+
+    // Console Trace
+    errorBtns[13].addEventListener('click', () => {
+
+      function fun1() {
+        console.trace();
+      }
+
+      function fun2() {
+        fun1();
+      }
+
+      function fun() {
+        fun2();
+      }
+
+      fun();
+    });
+
+
+    // Global Error
+    errorBtns[14].addEventListener('click', () => {
+      doesnNotExist();
+    });
+
+
   </script>
 </body>
 
