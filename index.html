@@ -96,10 +96,16 @@
       let secondNum = document.querySelector('#second-num').value;
       let operator = document.querySelector('#operator').value;
       // output.innerHTML = eval(`${firstNum} ${operator} ${secondNum}`);
+      class divisionError extends Error {
+        constructor(message) {
+          super(message);
+          this.name = 'Zero Division Error';
+        }
+      }
       try {
-        if (operator === '/' && secondNum === '0') {
-         
-          throw new Error('Division by zero is not allowed.');   //Step 3
+        if (operator == '/' && secondNum == '0') {
+
+          throw new divisionError('Division by zero is not allowed.');
         }
         else {
           output.innerHTML = eval(`${firstNum} ${operator} ${secondNum}`);
@@ -107,7 +113,7 @@
 
       } catch (error) {
         console.error('Error!');
-        
+
       } finally {
         console.log('Attempted to calculate!!!');
       }
@@ -222,6 +228,15 @@
 
 
   </script>
+
+  <script src="https://cdn.trackjs.com/agent/v3/latest/t.js"></script>
+  <script>
+    window.TrackJS && TrackJS.install({
+      token: "ff2fce42ab554fb7b2d307b0d9c5ac81"
+      // for more configuration options, see https://docs.trackjs.com
+    });
+  </script>
+
 </body>
 
 </html>
